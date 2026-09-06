@@ -64,6 +64,21 @@ export const certificationsData = [
   }
 ];
 
+export const expertiseData = [
+  { name: "Kaizen", description: "Continuous improvement culture", icon: "TrendingUp", theme: "gold" },
+  { name: "QCC", description: "Quality Control Circles", icon: "Users", theme: "blue" },
+  { name: "DMAIC", description: "Data-driven improvement", icon: "Repeat", theme: "gold" },
+  { name: "SMED", description: "Single-Minute Exchange", icon: "Timer", theme: "blue" },
+  { name: "Poka-Yoke", description: "Error-proofing processes", icon: "ShieldCheck", theme: "gold" },
+  { name: "Root Cause Analysis", description: "Identifying core issues", icon: "SearchCheck", theme: "blue" },
+  { name: "APQP", description: "Advanced Product Quality", icon: "ClipboardList", theme: "gold" },
+  { name: "PPAP", description: "Production Part Approval", icon: "FileCheck", theme: "blue" },
+  { name: "FMEA", description: "Failure Mode & Effects", icon: "AlertTriangle", theme: "gold" },
+  { name: "MSA", description: "Measurement Systems", icon: "Ruler", theme: "blue" },
+  { name: "SPC", description: "Statistical Process Control", icon: "BarChart3", theme: "gold" },
+  { name: "Visual Management", description: "Clear workplace info", icon: "LayoutGrid", theme: "blue" }
+];
+
 export const educationData = [
   {
     id: "bsc-stat",

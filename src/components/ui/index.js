@@ -62,3 +62,20 @@ export function IconByName({ name, className }) {
   const IconComponent = Icons[name] || Icons.CheckCircle;
   return <IconComponent className={className} />;
 }
+
+export function SkillIconCard({ icon, name, description, accentColor = 'gold' }) {
+  const isGold = accentColor === 'gold';
+  const glowShadow = isGold ? 'hover:shadow-[0_8px_30px_rgba(212,175,55,0.15)]' : 'hover:shadow-[0_8px_30px_rgba(59,130,246,0.15)]';
+  const iconBg = isGold ? 'bg-yellow-600/10 group-hover:bg-yellow-600/20' : 'bg-blue-500/10 group-hover:bg-blue-500/20';
+  const iconColor = isGold ? 'text-yellow-600' : 'text-blue-500';
+
+  return (
+    <div className={`group flex flex-col items-start p-6 bg-white rounded-2xl border border-slate-100 shadow-[0_2px_8px_rgba(0,0,0,0.04)] transition-all duration-300 ease-out hover:-translate-y-1 ${glowShadow}`}>
+      <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-5 transition-colors duration-300 ${iconBg}`}>
+        <IconByName name={icon} className={`w-6 h-6 transition-transform duration-300 group-hover:scale-110 ${iconColor}`} />
+      </div>
+      <h3 className="font-bold text-slate-900 text-lg mb-1">{name}</h3>
+      {description && <p className="text-sm text-slate-500 font-medium">{description}</p>}
+    </div>
+  );
+}

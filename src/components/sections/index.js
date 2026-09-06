@@ -1,5 +1,5 @@
-import { profileData, certificationsData, educationData, projectsData, experienceData } from "@/data";
-import { AnimatedCounter, RevealOnScroll, SectionLabel, IconByName } from "@/components/ui";
+import { profileData, certificationsData, educationData, projectsData, experienceData, expertiseData } from "@/data";
+import { AnimatedCounter, RevealOnScroll, SectionLabel, IconByName, SkillIconCard } from "@/components/ui";
 
 export function About() {
   return (
@@ -32,20 +32,22 @@ export function About() {
 
 export function Expertise() {
   return (
-    <section id="expertise" className="py-20">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+    <section id="expertise" className="py-24 relative overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl relative z-10">
         <RevealOnScroll>
           <SectionLabel 
             title="Training & Facilitation Expertise" 
             subtitle="Core competencies and methodologies I use to drive operational excellence." 
           />
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-12">
-            {profileData.skills.map((skill, i) => (
-              <RevealOnScroll key={i} delay={i * 0.05} className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow group">
-                <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                  <div className="w-4 h-4 bg-blue-500 rounded-sm rotate-45"></div>
-                </div>
-                <h3 className="font-semibold text-slate-900">{skill}</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mt-16">
+            {expertiseData.map((skill, i) => (
+              <RevealOnScroll key={i} delay={i * 0.05}>
+                <SkillIconCard 
+                  name={skill.name}
+                  description={skill.description}
+                  icon={skill.icon}
+                  accentColor={skill.theme}
+                />
               </RevealOnScroll>
             ))}
           </div>
